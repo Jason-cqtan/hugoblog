@@ -3,25 +3,25 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>K8s设计理念 – Jason Tan's blog</title>
+<title>Kind创建单、多集群 – Jason Tan's blog</title>
 <script defer src=/js/fuse.min.32195737929df2c8096e855a5789cbb3f1331224d9169e8705493e7008f47df8.js></script>
 <script src=/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js></script>
 <script defer src=/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js></script>
 <script defer src=/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js></script>
 <script defer src=/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js></script>
 <script defer src=/js/helper/closest.min.js></script>
-<script>"use strict";window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach),String.prototype.includes||(String.prototype.includes=function(b,a){'use strict';if(b instanceof RegExp)throw TypeError('first argument must not be a RegExp');return a===void 0&&(a=0),this.indexOf(b,a)!==-1}),Document.prototype.append=Element.prototype.append=function(){this.appendChild(_mutation(arguments))};function _mutation(a){if(!a.length)throw new Error('DOM Exception 8');if(a.length===1)return typeof a[0]=='string'?document.createTextNode(a[0]):a[0];for(var c=document.createDocumentFragment(),e=a.length,d=-1,b;++d<e;)b=a[d],c.appendChild(typeof b=='string'?document.createTextNode(b):b);return c}String.prototype.startsWith||(String.prototype.startsWith=function(b,a){return a=a||0,this.indexOf(b,a)===a}),document.addEventListener('DOMContentLoaded',function(){var z=document.querySelector('.navbar__burger'),J,F,G,N,U,f,d,V,r,ae,Z,Q,o,g,y,k,b,s,t,P,O,e,C,h,D,B,ai,A,aj,at,ar,ab,aq,E,ap,ao,ah,an,i,j,c,am,S,T,ak,w,W,X,ag,x,n,Y,q,av,au,a,aw,R,m,L,K,I,v,p,u;z?z.addEventListener('click',function(c){var a=document.querySelector('.navbarm__collapse'),b;a&&(b=a.getAttribute('data-open'),b==='true'?(a.setAttribute('data-open','false'),a.style.maxHeight=0,z.classList.remove('is-active')):(a.setAttribute('data-open','true'),a.style.maxHeight=a.scrollHeight+"px",z.classList.add('is-active')))}):null,J=document.querySelectorAll('.single__contents > table');for(let a=0;a<J.length;a++)F=J[a],G=document.createElement('div'),G.className='table-wrapper',F.parentElement.replaceChild(G,F),G.appendChild(F);N=document.querySelectorAll('.footnote-ref'),U=document.querySelectorAll('.footnote-backref'),N?N.forEach(function(a,c){a.onmouseenter=function(){b.classList.contains('scrolling')&&b.classList.remove('scrolling')},a.onmouseleave=function(){b.classList.contains('scrolling')||setTimeout(function(){b.classList.add('scrolling')},100)},a.onclick=function(){b.classList.contains('scrolling')||(b.classList.remove('navbar--show'),b.classList.remove('navbar--hide'),b.classList.add('navbar--hide'))}}):null,U?U.forEach(function(a,c){a.onmouseenter=function(){b.classList.contains('scrolling')&&b.classList.remove('scrolling')},a.onmouseleave=function(){b.classList.contains('scrolling')||setTimeout(function(){b.classList.add('scrolling')},100)},a.onclick=function(){b.classList.contains('scrolling')||(b.classList.remove('navbar--show'),b.classList.remove('navbar--hide'),b.classList.add('navbar--hide'))}}):null,f=document.querySelector('.summary__container'),d=document.querySelector('.search-result'),V=document.querySelector('.search-result__close'),V?V.addEventListener('click',function(a){d.setAttribute('data-display','none'),f.setAttribute('data-display','block')}):null,document.querySelectorAll('.tab')?document.querySelectorAll('.tab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.tab__link'),c=a.querySelectorAll('.tab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,document.querySelectorAll('.codetab')?document.querySelectorAll('.codetab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.codetab__link'),c=a.querySelectorAll('.codetab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,r=document.getElementById("gtt"),r.style.display="none",r.addEventListener('click',function(){window.document.documentMode?document.documentElement.scrollTop=0:af(250)});function af(a){var b=-window.scrollY/(a/15),c=setInterval(function(){window.scrollY!=0?window.scrollBy(0,b):clearInterval(c)},15)}ae=function(){document.body.scrollTop>250||document.documentElement.scrollTop>250?r.style.display="block":r.style.display="none"},Z=document.querySelectorAll('.expand__button');for(let a=0;a<Z.length;a++)Z[a].addEventListener("click",function(){var a=this.nextElementSibling;a.style.maxHeight?(a.style.maxHeight=null,this.querySelector('svg').classList.add('expand-icon__right'),this.querySelector('svg').classList.remove('expand-icon__down')):(a.style.maxHeight=a.scrollHeight+"px",this.querySelector('svg').classList.remove('expand-icon__right'),this.querySelector('svg').classList.add('expand-icon__down'))});Q=window.pageYOffset||document.documentElement.scrollTop,o=document.querySelector('.toc'),g=o?o.querySelector('#TableOfContents'):null,y=document.getElementById('toggle-toc'),k=document.querySelector('.single__contents'),b=document.querySelector('.navbar'),s=document.querySelector('.toc__flexbox'),t=document.querySelector('.toc__flexbox--outer'),P=document.querySelectorAll('.expand__content'),O=document.querySelectorAll('.box'),e=null,C=JSON.parse("false"),h=JSON.parse('["h2","h3","h4"]'),h?h=h.toString():h="h1, h2, h3, h4, h5, h6",k&&k.querySelectorAll(".tab")?k.querySelectorAll(".tab").forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,P?P.forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,O?O.forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,window.onscroll=function(){ae();var a=window.pageYOffset||document.documentElement.scrollTop;if(a>Q){if(a<250?r.style.display="none":r.style.display="block",a<45)return null;b.classList.contains('scrolling')&&(b.classList.contains('navbar--hide')?b.classList.contains('navbar--show')&&b.classList.remove('navbar--show'):b.classList.add('navbar--hide')),k&&(k.querySelectorAll(h).length>0?k.querySelectorAll(h).forEach(function(c){var b,a;if(y&&!y.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),o.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),o.querySelector('a[href="#'+b+'"]')?o.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&(s.setAttribute('data-position',''),s.classList.contains('hide')||s.classList.add('hide')),t&&(t.setAttribute('data-position',''),t.classList.contains('hide')||t.classList.add('hide'))))}else a<250&&(r.style.display="none"),b.classList.contains('scrolling')&&(b.classList.contains('navbar--hide')?b.classList.remove('navbar--hide'):b.classList.contains('navbar--show')||b.classList.add('navbar--show')),k&&(k.querySelectorAll(h).length>0?k.querySelectorAll(h).forEach(function(c){var b,a;if(y&&!y.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),o.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),o.querySelector('a[href="#'+b+'"]')?o.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&!s.classList.contains('hide')&&s.classList.add('hide'),t&&!t.classList.contains('hide')&&t.classList.add('hide'))),g&&document.documentElement.scrollTop<250&&(!1===C||(g.querySelector('ul')?g.querySelector('ul').querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})}):null));Q=a<=0?0:a},D=localStorage.getItem('theme'),B=document.getElementById('root'),ai=document.querySelectorAll('.select-theme'),A=document.querySelectorAll('.select-theme__item'),aj=JSON.parse('"dark"'),at=JSON.parse('"light"'),ar=JSON.parse('"hacker"'),ab=JSON.parse('"solarized"'),aq=JSON.parse('"kimbie"'),E=function(a){var b=document.getElementsByName('msapplication-TileColor')[0],c=document.getElementsByName('theme-color')[0],d=document.getElementsByName('msapplication-navbutton-color')[0],e=document.getElementsByName('apple-mobile-web-app-status-bar-style')[0];a.includes('dark')?(b.setAttribute('content','#fcfcfa'),c.setAttribute('content','#403E41'),d.setAttribute('content','#403E41'),e.setAttribute('content','#403E41')):a.includes('light')?(b.setAttribute('content','#555'),c.setAttribute('content','#eee'),d.setAttribute('content','#eee'),e.setAttribute('content','#eee')):a.includes('hacker')?(b.setAttribute('content','#e3cd26'),c.setAttribute('content','#252526'),d.setAttribute('content','#252526'),e.setAttribute('content','#252526')):a.includes('solarized')?(b.setAttribute('content','#d3af86'),c.setAttribute('content','#51412c'),d.setAttribute('content','#51412c'),e.setAttribute('content','#51412c')):a.includes('kimbie')&&(b.setAttribute('content','#586e75'),c.setAttribute('content','#eee8d5'),d.setAttribute('content','#eee8d5'),e.setAttribute('content','#eee8d5'))},ap=function(a){if(a===aj)return'dark';if(a===at)return'light';if(a===ar)return'hacker';if(a===ab)return'solarized';if(a===aq)return'kimbie'},D?(A?A.forEach(function(a){a.text.trim()===D?a.classList.add('is-active'):a.classList.remove('is-active')}):null,E(D)):E(B.className),A?A.forEach(function(a,b){a.addEventListener('click',function(c){var a=ap(c.target.text.trim()),b,d;localStorage.setItem('theme',a),E(a),B.removeAttribute('class'),B.classList.add('theme__'+a),ai.forEach(function(b){b.querySelectorAll('a').forEach(function(b){b.classList&&(b.text.trim()===a?b.classList.contains('is-active')||b.classList.add('is-active'):b.classList.contains('is-active')&&b.classList.remove('is-active'))})}),window.mermaid&&(a==="dark"||a==="hacker"?(mermaid.initialize({theme:'dark'}),location.reload()):(mermaid.initialize({theme:'default'}),location.reload())),b=document.getElementById('utterances'),b&&b.querySelector('iframe').contentWindow.postMessage({type:'set-theme',theme:a==="dark"||a==="hacker"?'photon-dark':a==='kimbie'?'github-dark-orange':'github-light'},'https://utteranc.es'),d=document.querySelectorAll('.twitter-timeline'),d&&window.postMessage({type:'set-twitter-theme',theme:a==='light'||a==='solarized'?'light':'dark'})})}):null,ao=JSON.parse('"https://betterme.xin/"'),ah=JSON.parse('"https://betterme.xin/posts/2021-09/k8s04/"'),an=JSON.parse('""'),i=null,j=null,c=null,am=JSON.parse("true"),S=JSON.parse("100"),T=JSON.parse("0.4"),ak=JSON.parse("true"),w=JSON.parse("true"),W=JSON.parse('"main"'),X=JSON.parse('"posts"'),ag=JSON.parse('"page"'),x=null,am&&function(){var a=new XMLHttpRequest;X==="publication"&&ag!=="page"?a.open('GET',ah+"index.json"):a.open('GET',ao+an+"/index.json"),a.setRequestHeader('Content-Type','application/json; charset=utf-8'),a.onload=function(){a.status===200?(x=new Fuse(JSON.parse(a.response.toString('utf-8')),{keys:X.includes('publication')?['title','abstract']:ak?['title','description','content']:['title','description'],includeMatches:w,shouldSort:!0,threshold:T||.4,location:0,distance:S||100,maxPatternLength:32,minMatchCharLength:1,isCaseSensitive:!1,findAllMatches:!1,useExtendedSearch:!1}),window.fuse=x):console.error('['+a.status+']Error:',a.statusText)},a.send()}();function ac(e,a){var b=document.createElement('li'),c,d;b.className='search-result__item',c=document.createElement('a'),c.innerHTML=a.item.title,c.setAttribute('class','search-result__item--title'),c.setAttribute('href',a.item.uri),d=document.createElement('div'),d.setAttribute('class','search-result__item--desc'),a.item.description?d.innerHTML=a.item.description:a.item.content&&(d.innerHTML=a.item.content.substring(0,225)),b.appendChild(c),b.appendChild(d),e.appendChild(b)}function al(f,a){var e=document.createElement('li'),b,d,c;if(e.className='search-result__item',b=null,d=document.createElement('a'),d.innerHTML=a.item.title,d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri),a.matches&&a.matches.length){for(c=0;c<a.matches.length;c++)'title'===a.matches[c].key&&(d=document.createElement('a'),d.innerHTML=l(a.matches[c].value,a.matches[c].indices),d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri)),'description'===a.matches[c].key?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=l(a.item.description,a.matches[c].indices)):'content'===a.matches[c].key?b||(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=l(a.item.content.substring(0,150),a.matches[c].indices)):a.item.description?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.description):(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.content.substring(0,150));e.appendChild(d),b&&e.appendChild(b),e&&f.appendChild(e)}}function H(d,c){var a,b;for(i=document.getElementById('search-results'),j=document.getElementById('search-menu'),i.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var e=document.createElement('li'),c=document.createElement('a'),f,d;c.setAttribute('href',b.uri),c.setAttribute('class','dropdown-item'),c.appendChild(e),f=document.createElement('div'),f.innerHTML=b.title,f.setAttribute('class','menu-item__title'),d=document.createElement('div'),d.setAttribute('class','menu-item__desc'),b.description?d.innerHTML=b.description:b.content&&(d.innerHTML=b.content.substring(0,150)),e.appendChild(f),e.appendChild(d),a.appendChild(c)}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));j.hasChildNodes();)j.removeChild(j.lastChild);j.appendChild(a)}function $(d,c){var a,b;for(i=document.getElementById('search-results'),j=document.getElementById('search-menu'),i.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var g=document.createElement('li'),e=document.createElement('a'),c=null,f,d;if(e.setAttribute('href',b.item.uri),e.setAttribute('class','dropdown-item'),e.appendChild(g),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','menu-item__title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=l(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=l(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=l(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.content.substring(0,150));g.appendChild(f),c&&g.appendChild(c),a.appendChild(e)}}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));j.hasChildNodes();)j.removeChild(j.lastChild);j.appendChild(a)}function _(e,c){var a,d;i=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length>0?c.forEach(function(b){var c=document.createElement('a');c.setAttribute('href',b.uri),c.innerHTML='<div class="mobile-search__item"><div class="mobile-search__item--title">📄 '+b.title+'</div><div class="mobile-search__item--desc">'+(b.description?b.description:b.content)+'</div></div>',a.appendChild(c)}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);i.appendChild(a)}function ad(e,c){var a,d;i=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length?c.forEach(function(b){var e=document.createElement('li'),g=document.createElement('a'),c=null,f,d;if(g.setAttribute('href',b.item.uri),g.appendChild(e),e.setAttribute('class','mobile-search__item'),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','mobile-search__item--title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=l(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=l(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=l(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.content.substring(0,150));e.appendChild(f),c&&e.appendChild(c),a.appendChild(g)}}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);i.appendChild(a)}function l(a,d){if(!d)return a;var b='',c=0;return d.forEach(function(d){if(d[0]===d[1])return null;b+=''+a.substring(c,d[0])+'<span class="search__highlight">'+a.substring(d[0],d[1]+1)+'</span>'+'',c=d[1]+1}),b+=a.substring(c),b}n=document.getElementById('search'),Y=document.getElementById('search-mobile'),q=document.getElementById('search-results'),n?n.addEventListener('input',function(b){var a,e;if(!b.target.value|window.innerWidth<770)return q?q.setAttribute('class','dropdown'):null,d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null,null;c=b.target.value,a=x.search(b.target.value),W==="main"?w?aa(c,a):M(c,a):(w?$(c,a):H(c,a),e=q.querySelectorAll('.dropdown-item'),e?e.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,n?n.addEventListener('blur',function(){if(window.innerWidth<770)return null;q?q.setAttribute('class','dropdown'):null}):null,n?n.addEventListener('click',function(b){var a,d;if(window.innerWidth<770)return null;if(!b.target.value)return q?q.setAttribute('class','dropdown'):null,null;c=b.target.value,a=x.search(b.target.value),W==="main"?w?aa(c,a):M(c,a):(w?$(c,a):H(c,a),d=q.querySelectorAll('.dropdown-item'),d?d.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,av=document.getElementById("search-menu"),au=document.querySelector('#search-menu .dropdown-item.is-active'),a=null,aw=null,R=350,n?n.addEventListener('keydown',function(c){var b,e;if(window.innerWidth<770)return null;if(c.key==='Escape'&&(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b=document.querySelectorAll('#search-menu .dropdown-item'),e=c.which||c.keyCode,!b||!b.length)return null;if(c.key==='ArrowDown'||e===40){a===null?(a=0,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===b.length-1?0:a+1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-R;c>0?document.querySelector(".search-content").scrollTop+=b[a].getBoundingClientRect().height:a===0&&(document.querySelector(".search-content").scrollTop=0)}else if(c.key==='ArrowUp'||e===38){a===null?(a=b.length-1,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===0?b.length-1:a-1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-R;c<0?document.querySelector(".search-content").scrollTop-=b[a].getBoundingClientRect().height:document.querySelector(".search-content").scrollTop=c+b[a].getBoundingClientRect().height}else c.key==='Enter'||e===13?b[a]&&b[a].getAttribute('href')&&(location.href=b[a].getAttribute('href')):(c.key==='Escape'||e===27)&&(c.target.value=null,i&&i.classList.remove('is-active'))}):null,Y?Y.addEventListener('input',function(a){if(!a.target.value){let a=document.getElementById('search-mobile-results');while(a.firstChild)a.removeChild(a.firstChild);return null}c=a.target.value;var b=x.search(a.target.value);_(c,b),w?ad(c,b):_(c,b)}):null,m=document.querySelector('#search-mobile'),L=document.querySelector('.mobile-search'),K=document.querySelectorAll('.navbar-search'),I=document.querySelector('#search-mobile-close'),v=document.querySelector('#search-mobile-container'),p=document.querySelector('#search-mobile-results'),u=document.querySelector('html'),L&&(L.style.display='none'),K?K.forEach(function(a,b){a.addEventListener('click',function(){v&&(v.style.display='block'),m&&m.focus(),u&&(u.style.overflowY='hidden')})}):null,I?I.addEventListener('click',function(){if(v&&(v.style.display='none'),m&&(m.value=''),p)while(p.firstChild)p.removeChild(p.firstChild);u&&(u.style.overflowY='visible')}):null,m?m.addEventListener('keydown',function(a){var b=a.which||a.keyCode;if(a.key==='Escape'||b===27){if(v&&(v.style.display='none'),m&&(m.value=''),p)while(p.firstChild)p.removeChild(p.firstChild);u&&(u.style.overflowY='visible')}}):null;function M(e,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),c=document.createElement('ul');e?a&&a&&a.length&&(a.forEach(function(a){ac(c,a)}),d?d.setAttribute('data-display','block'):null,f?f.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b.parentNode.replaceChild(c,b)}function aa(e,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),c=document.createElement('ul');e?a&&a&&a.length&&(a.forEach(function(a){al(c,a)}),d?d.setAttribute('data-display','block'):null,f?f.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b.parentNode.replaceChild(c,b)}})</script>
+<script>"use strict";window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach),String.prototype.includes||(String.prototype.includes=function(b,a){'use strict';if(b instanceof RegExp)throw TypeError('first argument must not be a RegExp');return a===void 0&&(a=0),this.indexOf(b,a)!==-1}),Document.prototype.append=Element.prototype.append=function(){this.appendChild(_mutation(arguments))};function _mutation(a){if(!a.length)throw new Error('DOM Exception 8');if(a.length===1)return typeof a[0]=='string'?document.createTextNode(a[0]):a[0];for(var c=document.createDocumentFragment(),e=a.length,d=-1,b;++d<e;)b=a[d],c.appendChild(typeof b=='string'?document.createTextNode(b):b);return c}String.prototype.startsWith||(String.prototype.startsWith=function(b,a){return a=a||0,this.indexOf(b,a)===a}),document.addEventListener('DOMContentLoaded',function(){var z=document.querySelector('.navbar__burger'),J,F,G,N,U,f,d,V,r,ae,Z,Q,o,g,y,k,b,s,t,P,O,e,C,h,D,B,ai,A,aj,at,ar,ab,aq,E,ap,ao,ah,an,i,j,c,am,S,T,ak,w,W,X,ag,x,n,Y,q,av,au,a,aw,R,m,L,K,I,v,p,u;z?z.addEventListener('click',function(c){var a=document.querySelector('.navbarm__collapse'),b;a&&(b=a.getAttribute('data-open'),b==='true'?(a.setAttribute('data-open','false'),a.style.maxHeight=0,z.classList.remove('is-active')):(a.setAttribute('data-open','true'),a.style.maxHeight=a.scrollHeight+"px",z.classList.add('is-active')))}):null,J=document.querySelectorAll('.single__contents > table');for(let a=0;a<J.length;a++)F=J[a],G=document.createElement('div'),G.className='table-wrapper',F.parentElement.replaceChild(G,F),G.appendChild(F);N=document.querySelectorAll('.footnote-ref'),U=document.querySelectorAll('.footnote-backref'),N?N.forEach(function(a,c){a.onmouseenter=function(){b.classList.contains('scrolling')&&b.classList.remove('scrolling')},a.onmouseleave=function(){b.classList.contains('scrolling')||setTimeout(function(){b.classList.add('scrolling')},100)},a.onclick=function(){b.classList.contains('scrolling')||(b.classList.remove('navbar--show'),b.classList.remove('navbar--hide'),b.classList.add('navbar--hide'))}}):null,U?U.forEach(function(a,c){a.onmouseenter=function(){b.classList.contains('scrolling')&&b.classList.remove('scrolling')},a.onmouseleave=function(){b.classList.contains('scrolling')||setTimeout(function(){b.classList.add('scrolling')},100)},a.onclick=function(){b.classList.contains('scrolling')||(b.classList.remove('navbar--show'),b.classList.remove('navbar--hide'),b.classList.add('navbar--hide'))}}):null,f=document.querySelector('.summary__container'),d=document.querySelector('.search-result'),V=document.querySelector('.search-result__close'),V?V.addEventListener('click',function(a){d.setAttribute('data-display','none'),f.setAttribute('data-display','block')}):null,document.querySelectorAll('.tab')?document.querySelectorAll('.tab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.tab__link'),c=a.querySelectorAll('.tab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,document.querySelectorAll('.codetab')?document.querySelectorAll('.codetab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.codetab__link'),c=a.querySelectorAll('.codetab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,r=document.getElementById("gtt"),r.style.display="none",r.addEventListener('click',function(){window.document.documentMode?document.documentElement.scrollTop=0:af(250)});function af(a){var b=-window.scrollY/(a/15),c=setInterval(function(){window.scrollY!=0?window.scrollBy(0,b):clearInterval(c)},15)}ae=function(){document.body.scrollTop>250||document.documentElement.scrollTop>250?r.style.display="block":r.style.display="none"},Z=document.querySelectorAll('.expand__button');for(let a=0;a<Z.length;a++)Z[a].addEventListener("click",function(){var a=this.nextElementSibling;a.style.maxHeight?(a.style.maxHeight=null,this.querySelector('svg').classList.add('expand-icon__right'),this.querySelector('svg').classList.remove('expand-icon__down')):(a.style.maxHeight=a.scrollHeight+"px",this.querySelector('svg').classList.remove('expand-icon__right'),this.querySelector('svg').classList.add('expand-icon__down'))});Q=window.pageYOffset||document.documentElement.scrollTop,o=document.querySelector('.toc'),g=o?o.querySelector('#TableOfContents'):null,y=document.getElementById('toggle-toc'),k=document.querySelector('.single__contents'),b=document.querySelector('.navbar'),s=document.querySelector('.toc__flexbox'),t=document.querySelector('.toc__flexbox--outer'),P=document.querySelectorAll('.expand__content'),O=document.querySelectorAll('.box'),e=null,C=JSON.parse("true"),h=JSON.parse('["h2","h3","h4"]'),h?h=h.toString():h="h1, h2, h3, h4, h5, h6",k&&k.querySelectorAll(".tab")?k.querySelectorAll(".tab").forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,P?P.forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,O?O.forEach(function(a){a.querySelectorAll(h).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,window.onscroll=function(){ae();var a=window.pageYOffset||document.documentElement.scrollTop;if(a>Q){if(a<250?r.style.display="none":r.style.display="block",a<45)return null;b.classList.contains('scrolling')&&(b.classList.contains('navbar--hide')?b.classList.contains('navbar--show')&&b.classList.remove('navbar--show'):b.classList.add('navbar--hide')),k&&(k.querySelectorAll(h).length>0?k.querySelectorAll(h).forEach(function(c){var b,a;if(y&&!y.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),o.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),o.querySelector('a[href="#'+b+'"]')?o.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&(s.setAttribute('data-position',''),s.classList.contains('hide')||s.classList.add('hide')),t&&(t.setAttribute('data-position',''),t.classList.contains('hide')||t.classList.add('hide'))))}else a<250&&(r.style.display="none"),b.classList.contains('scrolling')&&(b.classList.contains('navbar--hide')?b.classList.remove('navbar--hide'):b.classList.contains('navbar--show')||b.classList.add('navbar--show')),k&&(k.querySelectorAll(h).length>0?k.querySelectorAll(h).forEach(function(c){var b,a;if(y&&!y.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),o.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),o.querySelector('a[href="#'+b+'"]')?o.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&!s.classList.contains('hide')&&s.classList.add('hide'),t&&!t.classList.contains('hide')&&t.classList.add('hide'))),g&&document.documentElement.scrollTop<250&&(!1===C||(g.querySelector('ul')?g.querySelector('ul').querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})}):null));Q=a<=0?0:a},D=localStorage.getItem('theme'),B=document.getElementById('root'),ai=document.querySelectorAll('.select-theme'),A=document.querySelectorAll('.select-theme__item'),aj=JSON.parse('"dark"'),at=JSON.parse('"light"'),ar=JSON.parse('"hacker"'),ab=JSON.parse('"solarized"'),aq=JSON.parse('"kimbie"'),E=function(a){var b=document.getElementsByName('msapplication-TileColor')[0],c=document.getElementsByName('theme-color')[0],d=document.getElementsByName('msapplication-navbutton-color')[0],e=document.getElementsByName('apple-mobile-web-app-status-bar-style')[0];a.includes('dark')?(b.setAttribute('content','#fcfcfa'),c.setAttribute('content','#403E41'),d.setAttribute('content','#403E41'),e.setAttribute('content','#403E41')):a.includes('light')?(b.setAttribute('content','#555'),c.setAttribute('content','#eee'),d.setAttribute('content','#eee'),e.setAttribute('content','#eee')):a.includes('hacker')?(b.setAttribute('content','#e3cd26'),c.setAttribute('content','#252526'),d.setAttribute('content','#252526'),e.setAttribute('content','#252526')):a.includes('solarized')?(b.setAttribute('content','#d3af86'),c.setAttribute('content','#51412c'),d.setAttribute('content','#51412c'),e.setAttribute('content','#51412c')):a.includes('kimbie')&&(b.setAttribute('content','#586e75'),c.setAttribute('content','#eee8d5'),d.setAttribute('content','#eee8d5'),e.setAttribute('content','#eee8d5'))},ap=function(a){if(a===aj)return'dark';if(a===at)return'light';if(a===ar)return'hacker';if(a===ab)return'solarized';if(a===aq)return'kimbie'},D?(A?A.forEach(function(a){a.text.trim()===D?a.classList.add('is-active'):a.classList.remove('is-active')}):null,E(D)):E(B.className),A?A.forEach(function(a,b){a.addEventListener('click',function(c){var a=ap(c.target.text.trim()),b,d;localStorage.setItem('theme',a),E(a),B.removeAttribute('class'),B.classList.add('theme__'+a),ai.forEach(function(b){b.querySelectorAll('a').forEach(function(b){b.classList&&(b.text.trim()===a?b.classList.contains('is-active')||b.classList.add('is-active'):b.classList.contains('is-active')&&b.classList.remove('is-active'))})}),window.mermaid&&(a==="dark"||a==="hacker"?(mermaid.initialize({theme:'dark'}),location.reload()):(mermaid.initialize({theme:'default'}),location.reload())),b=document.getElementById('utterances'),b&&b.querySelector('iframe').contentWindow.postMessage({type:'set-theme',theme:a==="dark"||a==="hacker"?'photon-dark':a==='kimbie'?'github-dark-orange':'github-light'},'https://utteranc.es'),d=document.querySelectorAll('.twitter-timeline'),d&&window.postMessage({type:'set-twitter-theme',theme:a==='light'||a==='solarized'?'light':'dark'})})}):null,ao=JSON.parse('"https://betterme.xin/"'),ah=JSON.parse('"https://betterme.xin/posts/2021-09/kind/"'),an=JSON.parse('""'),i=null,j=null,c=null,am=JSON.parse("true"),S=JSON.parse("100"),T=JSON.parse("0.4"),ak=JSON.parse("true"),w=JSON.parse("true"),W=JSON.parse('"main"'),X=JSON.parse('"posts"'),ag=JSON.parse('"page"'),x=null,am&&function(){var a=new XMLHttpRequest;X==="publication"&&ag!=="page"?a.open('GET',ah+"index.json"):a.open('GET',ao+an+"/index.json"),a.setRequestHeader('Content-Type','application/json; charset=utf-8'),a.onload=function(){a.status===200?(x=new Fuse(JSON.parse(a.response.toString('utf-8')),{keys:X.includes('publication')?['title','abstract']:ak?['title','description','content']:['title','description'],includeMatches:w,shouldSort:!0,threshold:T||.4,location:0,distance:S||100,maxPatternLength:32,minMatchCharLength:1,isCaseSensitive:!1,findAllMatches:!1,useExtendedSearch:!1}),window.fuse=x):console.error('['+a.status+']Error:',a.statusText)},a.send()}();function ac(e,a){var b=document.createElement('li'),c,d;b.className='search-result__item',c=document.createElement('a'),c.innerHTML=a.item.title,c.setAttribute('class','search-result__item--title'),c.setAttribute('href',a.item.uri),d=document.createElement('div'),d.setAttribute('class','search-result__item--desc'),a.item.description?d.innerHTML=a.item.description:a.item.content&&(d.innerHTML=a.item.content.substring(0,225)),b.appendChild(c),b.appendChild(d),e.appendChild(b)}function al(f,a){var e=document.createElement('li'),b,d,c;if(e.className='search-result__item',b=null,d=document.createElement('a'),d.innerHTML=a.item.title,d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri),a.matches&&a.matches.length){for(c=0;c<a.matches.length;c++)'title'===a.matches[c].key&&(d=document.createElement('a'),d.innerHTML=l(a.matches[c].value,a.matches[c].indices),d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri)),'description'===a.matches[c].key?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=l(a.item.description,a.matches[c].indices)):'content'===a.matches[c].key?b||(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=l(a.item.content.substring(0,150),a.matches[c].indices)):a.item.description?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.description):(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.content.substring(0,150));e.appendChild(d),b&&e.appendChild(b),e&&f.appendChild(e)}}function H(d,c){var a,b;for(i=document.getElementById('search-results'),j=document.getElementById('search-menu'),i.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var e=document.createElement('li'),c=document.createElement('a'),f,d;c.setAttribute('href',b.uri),c.setAttribute('class','dropdown-item'),c.appendChild(e),f=document.createElement('div'),f.innerHTML=b.title,f.setAttribute('class','menu-item__title'),d=document.createElement('div'),d.setAttribute('class','menu-item__desc'),b.description?d.innerHTML=b.description:b.content&&(d.innerHTML=b.content.substring(0,150)),e.appendChild(f),e.appendChild(d),a.appendChild(c)}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));j.hasChildNodes();)j.removeChild(j.lastChild);j.appendChild(a)}function $(d,c){var a,b;for(i=document.getElementById('search-results'),j=document.getElementById('search-menu'),i.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var g=document.createElement('li'),e=document.createElement('a'),c=null,f,d;if(e.setAttribute('href',b.item.uri),e.setAttribute('class','dropdown-item'),e.appendChild(g),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','menu-item__title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=l(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=l(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=l(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.content.substring(0,150));g.appendChild(f),c&&g.appendChild(c),a.appendChild(e)}}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));j.hasChildNodes();)j.removeChild(j.lastChild);j.appendChild(a)}function _(e,c){var a,d;i=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length>0?c.forEach(function(b){var c=document.createElement('a');c.setAttribute('href',b.uri),c.innerHTML='<div class="mobile-search__item"><div class="mobile-search__item--title">📄 '+b.title+'</div><div class="mobile-search__item--desc">'+(b.description?b.description:b.content)+'</div></div>',a.appendChild(c)}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);i.appendChild(a)}function ad(e,c){var a,d;i=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length?c.forEach(function(b){var e=document.createElement('li'),g=document.createElement('a'),c=null,f,d;if(g.setAttribute('href',b.item.uri),g.appendChild(e),e.setAttribute('class','mobile-search__item'),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','mobile-search__item--title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=l(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=l(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=l(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.content.substring(0,150));e.appendChild(f),c&&e.appendChild(c),a.appendChild(g)}}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);i.appendChild(a)}function l(a,d){if(!d)return a;var b='',c=0;return d.forEach(function(d){if(d[0]===d[1])return null;b+=''+a.substring(c,d[0])+'<span class="search__highlight">'+a.substring(d[0],d[1]+1)+'</span>'+'',c=d[1]+1}),b+=a.substring(c),b}n=document.getElementById('search'),Y=document.getElementById('search-mobile'),q=document.getElementById('search-results'),n?n.addEventListener('input',function(b){var a,e;if(!b.target.value|window.innerWidth<770)return q?q.setAttribute('class','dropdown'):null,d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null,null;c=b.target.value,a=x.search(b.target.value),W==="main"?w?aa(c,a):M(c,a):(w?$(c,a):H(c,a),e=q.querySelectorAll('.dropdown-item'),e?e.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,n?n.addEventListener('blur',function(){if(window.innerWidth<770)return null;q?q.setAttribute('class','dropdown'):null}):null,n?n.addEventListener('click',function(b){var a,d;if(window.innerWidth<770)return null;if(!b.target.value)return q?q.setAttribute('class','dropdown'):null,null;c=b.target.value,a=x.search(b.target.value),W==="main"?w?aa(c,a):M(c,a):(w?$(c,a):H(c,a),d=q.querySelectorAll('.dropdown-item'),d?d.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,av=document.getElementById("search-menu"),au=document.querySelector('#search-menu .dropdown-item.is-active'),a=null,aw=null,R=350,n?n.addEventListener('keydown',function(c){var b,e;if(window.innerWidth<770)return null;if(c.key==='Escape'&&(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b=document.querySelectorAll('#search-menu .dropdown-item'),e=c.which||c.keyCode,!b||!b.length)return null;if(c.key==='ArrowDown'||e===40){a===null?(a=0,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===b.length-1?0:a+1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-R;c>0?document.querySelector(".search-content").scrollTop+=b[a].getBoundingClientRect().height:a===0&&(document.querySelector(".search-content").scrollTop=0)}else if(c.key==='ArrowUp'||e===38){a===null?(a=b.length-1,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===0?b.length-1:a-1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-R;c<0?document.querySelector(".search-content").scrollTop-=b[a].getBoundingClientRect().height:document.querySelector(".search-content").scrollTop=c+b[a].getBoundingClientRect().height}else c.key==='Enter'||e===13?b[a]&&b[a].getAttribute('href')&&(location.href=b[a].getAttribute('href')):(c.key==='Escape'||e===27)&&(c.target.value=null,i&&i.classList.remove('is-active'))}):null,Y?Y.addEventListener('input',function(a){if(!a.target.value){let a=document.getElementById('search-mobile-results');while(a.firstChild)a.removeChild(a.firstChild);return null}c=a.target.value;var b=x.search(a.target.value);_(c,b),w?ad(c,b):_(c,b)}):null,m=document.querySelector('#search-mobile'),L=document.querySelector('.mobile-search'),K=document.querySelectorAll('.navbar-search'),I=document.querySelector('#search-mobile-close'),v=document.querySelector('#search-mobile-container'),p=document.querySelector('#search-mobile-results'),u=document.querySelector('html'),L&&(L.style.display='none'),K?K.forEach(function(a,b){a.addEventListener('click',function(){v&&(v.style.display='block'),m&&m.focus(),u&&(u.style.overflowY='hidden')})}):null,I?I.addEventListener('click',function(){if(v&&(v.style.display='none'),m&&(m.value=''),p)while(p.firstChild)p.removeChild(p.firstChild);u&&(u.style.overflowY='visible')}):null,m?m.addEventListener('keydown',function(a){var b=a.which||a.keyCode;if(a.key==='Escape'||b===27){if(v&&(v.style.display='none'),m&&(m.value=''),p)while(p.firstChild)p.removeChild(p.firstChild);u&&(u.style.overflowY='visible')}}):null;function M(e,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),c=document.createElement('ul');e?a&&a&&a.length&&(a.forEach(function(a){ac(c,a)}),d?d.setAttribute('data-display','block'):null,f?f.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b.parentNode.replaceChild(c,b)}function aa(e,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),c=document.createElement('ul');e?a&&a&&a.length&&(a.forEach(function(a){al(c,a)}),d?d.setAttribute('data-display','block'):null,f?f.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,f?f.setAttribute('data-display','block'):null),b.parentNode.replaceChild(c,b)}})</script>
 <link rel=stylesheet href=/css/main.min.css>
 <meta name=description content>
-<meta name=keywords content="k8s,K8s设计理念">
-<meta name=keywords content="k8s">
-<meta name=created content="2021-09-28T14:18:51+0800">
-<meta name=modified content="2021-09-28T14:26:03+0800">
-<meta property="article:published_time" content="2021-09-28T14:18:51+0800">
+<meta name=keywords content="k8s,kind,clusters">
+<meta name=keywords content="k8s,kind">
+<meta name=created content="2021-09-29T14:21:35+0800">
+<meta name=modified content="2021-09-29T17:08:31+0800">
+<meta property="article:published_time" content="2021-09-29T14:21:35+0800">
 <meta name=author content="Jason Tan">
 <meta property="og:site_name" content="Jason Tan's blog">
-<meta property="og:title" content="K8s设计理念">
-<meta property="og:url" content="https://betterme.xin/posts/2021-09/k8s04/">
+<meta property="og:title" content="Kind创建单、多集群">
+<meta property="og:url" content="https://betterme.xin/posts/2021-09/kind/">
 <meta property="og:type" content="article">
 <meta property="og:description" content>
 <meta name=generator content="Hugo 0.88.1">
@@ -29,11 +29,11 @@
 <meta name=theme-color content="#fff">
 <meta name=msapplication-navbutton-color content="#fff">
 <meta name=apple-mobile-web-app-status-bar-style content="#fff">
-<link rel=canonical href=https://betterme.xin/posts/2021-09/k8s04/>
+<link rel=canonical href=https://betterme.xin/posts/2021-09/kind/>
 <link rel=manifest href=/manifest.json>
 <link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
 <link rel=icon href=/favicon.png sizes=any type=image/png>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebPage","headline":"K8s设计理念","datePublished":"2021-09-28T14:18:51+08:00","dateModified":"2021-09-28T14:26:03+08:00","url":"https://betterme.xin/posts/2021-09/k8s04/","description":"设计理念与分布式系统 分析和理解Kubernetes的设计理念可以使我们更深入地了解Kubernetes系统，更好地利用它管理分布式部署的云原","keywords":["k8s"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://betterme.xin/"},"publisher":{"@type":"Organization","name":"Jason Tan's blog","url":"https://betterme.xin/"}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebPage","headline":"Kind创建单、多集群","datePublished":"2021-09-29T14:21:35+08:00","dateModified":"2021-09-29T17:08:31+08:00","url":"https://betterme.xin/posts/2021-09/kind/","description":"介绍kind Kind是一个使用 Docker容器“节点”运行本地 Kubernetes 集群的工具。它主要用于测试 Kubernetes 本身，但也可用于本地开发或CI。 顾名思义，就是将","keywords":["k8s","kind"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://betterme.xin/"},"publisher":{"@type":"Organization","name":"Jason Tan's blog","url":"https://betterme.xin/"}}</script>
 <script>var baiduAnalyticsId=JSON.parse('"41529cb128969aa66fe0861ad566a29e"'),_hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?"+baiduAnalyticsId,b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 </head>
@@ -169,18 +169,18 @@ kimbie
 <a href=https://betterme.xin/posts/ class=capitalize>文章</a>
 </li>
 <li class=is-active>
-<span>K8s设计理念</span>
+<span>Kind创建单、多集群</span>
 </li>
 </ol>
 </nav>
 <div class=single>
 <div class=single__nojs>Please enable Javascript to view the contents</div>
 <script>document.querySelector('.single').classList.remove('hide'),document.querySelector('.single__nojs').classList.add('hide')</script>
-<h2 class=single__title data-ani=true>K8s设计理念</h2>
+<h2 class=single__title data-ani=true>Kind创建单、多集群</h2>
 <h3 class=single__subtitle></h3>
 <div class=single__meta>
 <div class=single__infos>
-<time class=single__info title=创建日期>📅&nbsp;2021年09月28日 </time>
+<time class=single__info title=创建日期>📅&nbsp;2021年09月29日 </time>
 &nbsp;&#183;&nbsp; <span class=single__info title=阅读时长> ☕&nbsp;7&nbsp;分钟 </span>
 <span class=single__info>
 &#183; 👀<span id=busuanzi_value_page_pv>...</span> 阅读
@@ -189,67 +189,507 @@ kimbie
 <ul class="single__tags caption">
 🏷️
 <li><a href=https://betterme.xin/tags/k8s/ class=single__tag title=k8s>#k8s</a></li>
+<li><a href=https://betterme.xin/tags/kind/ class=single__tag title=kind>#kind</a></li>
 </ul>
 </div>
 <article class=single__contents data-dir=ltr data-ani=true>
-<h2 id=设计理念与分布式系统>设计理念与分布式系统</h2>
-<p>分析和理解Kubernetes的设计理念可以使我们更深入地了解Kubernetes系统，更好地利用它管理分布式部署的云原生应用，另一方面也可以让我们借鉴其在分布式系统设计方面的经验。</p>
-<h2 id=架构设计原则>架构设计原则</h2>
-<p>只有apiserver可以直接访问etcd存储，其他服务必须通过Kubernetes API来访问集群状态<br>
-单节点故障不应该影响集群的状态<br>
-在没有新请求的情况下，所有组件应该在故障恢复后继续执行上次最后收到的请求（比如网络分区或服务重启等）<br>
-所有组件都应该在内存中保持所需要的状态，apiserver将状态写入etcd存储，而其他组件则通过apiserver更新并监听所有的变化<br>
-优先使用事件监听而不是轮询</p>
-<h2 id=核心技术概念和api对象>核心技术概念和API对象</h2>
-<p>API对象是K8s集群中的管理操作单元。K8s集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。例如副本集Replica Set对应的API对象是RS。<br>
-每个API对象都有3大类属性：<br>
-元数据metadata、<br>
-规范spec<br>
-状态status。<br>
-元数据是用来标识API对象的，每个对象都至少有3个元数据：namespace，name和uid；<br>
-除此以外还有各种各样的标签labels用来标识和匹配不同的对象，例如用户可以用标签env来标识区分不同的服务部署环境，分别用env=dev、env=testing、env=production来标识开发、测试、生产的不同服务。规范描述了用户期望K8s集群中的分布式系统达到的理想状态（Desired State），例如用户可以通过复制控制器Replication Controller设置期望的Pod副本数为3；status描述了系统实际当前达到的状态（Status），例如系统当前实际的Pod副本数为2；那么复本控制器当前的程序逻辑就是自动启动新的Pod，争取达到副本数为3。<br>
-K8s中所有的配置都是通过API对象的spec去设置的，也就是用户通过配置系统的理想状态来改变系统，这是k8s重要设计理念之一，即所有的操作都是声明式（Declarative）的而不是命令式（Imperative）的。声明式操作在分布式系统中的好处是稳定，不怕丢操作或运行多次，例如设置副本数为3的操作运行多次也还是一个结果，而给副本数加1的操作就不是声明式的，运行多次结果就错了。</p>
-<h3 id=节点node>节点（Node）</h3>
-<p>Kubernetes 运行在节点 (node) 上，节点是集群中的单个机器。如果你有自己的硬件，节点可能对应于物理机器，但更可能对应于在云中运行的虚拟机。节点是部署你的应用或服务的地方，是 Kubernetes 工作的地方。有 2 种类型的节点 ——master 节点和 worker 节点，所以说 Kubernetes 是主从结构的。<br>
-节点是 “物理” 结构 —— 我们把 “物理” 放在引号里，因为要记住，很多时候，它们实际上是虚拟机。</p>
-<h3 id=pod>pod</h3>
-<p>Kubernetes 中的逻辑而非物理的工作单位称为 pod。一个 pod 类似于 Docker 中的容器。<br>
-一个 Kubernetes pod 通常包含一个或多个 Docker 容器，所有的容器都作为一个微服务单元来管理。</p>
-<h3 id=复制控制器replication-controllerrc>复制控制器（Replication Controller，RC）</h3>
-<p>RC是k8s集群中早期保证pod高可用api对象，适用于长期服务业务型，如web服务</p>
-<h3 id=副本集replica-setrs>副本集（Replica Set，RS）</h3>
-<p>RS是新一代RC，同样保证高可用，区别在于提供更多匹配模式，一般不单独使用，配合Deployment理想状态参数使用</p>
-<h3 id=部署deployment>部署(Deployment)</h3>
-<p>用于创建更新服务，比RS应用模式更广的API对象</p>
-<h3 id=服务service>服务（Service）</h3>
-<p>提供服务发现，负载均衡能力（kube-proxy）</p>
-<h3 id=任务job>任务（Job）</h3>
-<p>用来控制批处理型任务的API对象，与长期服务业务型不同的是运行有头有尾</p>
-<h3 id=后台支撑服务集daemonset>后台支撑服务集（DaemonSet）</h3>
-<p>后台支撑服务集，关注节点，保证每个节点都有一个此类Pod运行，比如储存，日志和监控</p>
-<h3 id=有状态服务集statefulset>有状态服务集（StatefulSet）</h3>
-<p>RC和RS主要是控制提供无状态服务的，其所控制的Pod的名字是随机设置的，一个Pod出故障了就被丢弃掉，在另一个地方重启一个新的Pod，名字变了、名字和启动在哪儿都不重要，重要的只是Pod总数；有状态服务集，用来控制有状态服务，每个Pod的名字事先确定不能更改。<br>
-对于RC和RS中的Pod，一般不挂载存储或者挂载共享存储，保存的是所有Pod共享的状态，Pod像牲畜一样没有分别（这似乎也确实意味着失去了人性特征）；对于StatefulSet中的Pod，每个Pod挂载自己独立的存储，如果一个Pod出现故障，从其他节点启动一个同样名字的Pod，要挂载上原来Pod的存储继续以它的状态提供服务。<br>
-适合于StatefulSet的业务包括数据库服务MySQL和PostgreSQL，集群化管理服务Zookeeper、etcd等有状态服务。</p>
-<h3 id=集群联邦federation>集群联邦（Federation）</h3>
-<p>服务的作用距离范围从近到远一般可以有：同主机（Host，Node）、跨主机同可用区（Available Zone）、跨可用区同地区（Region）、跨地区同服务商（Cloud Service Provider）、跨云平台。K8s的设计定位是单一集群在同一个地域内，因为同一个地区的网络性能才能满足K8s的调度和计算存储连接要求。而联合集群服务就是为提供跨Region跨服务商K8s集群服务而设计的。</p>
-<h3 id=存储卷volume>存储卷（Volume）</h3>
-<p>K8s的存储卷的生命周期和作用范围是一个Pod</p>
-<h3 id=持久存储卷persistent-volumepv和持久存储卷声明persistent-volume-claimpvc>持久存储卷（Persistent Volume，PV）和持久存储卷声明（Persistent Volume Claim，PVC）</h3>
-<p>PV和PVC使得K8s集群具备了存储的逻辑抽象能力，使得在配置Pod的逻辑里可以忽略对实际后台存储技术的配置，而把这项配置的工作交给PV的配置者，即集群的管理者。存储的PV和PVC的这种关系，跟计算的Node和Pod的关系是非常类似的；PV和Node是资源的提供者，根据集群的基础设施变化而变化，由K8s集群管理员配置；而PVC和Pod是资源的使用者，根据业务服务的需求变化而变化，由K8s集群的使用者即服务的管理员来配置。</p>
-<h3 id=密钥对象secret>密钥对象（Secret）</h3>
-<p>Secret是用来保存和传递密码、密钥、认证凭证这些敏感信息的对象。使用Secret的好处是可以避免把敏感信息明文写在配置文件里。在K8s集群中配置和使用服务不可避免的要用到各种敏感信息实现登录、认证等功能，例如访问AWS存储的用户名密码。为了避免将类似的敏感信息明文写在所有需要使用的配置文件中，可以将这些信息存入一个Secret对象，而在配置文件中通过Secret对象引用这些敏感信息。这种方式的好处包括：意图明确，避免重复，减少暴露机会。</p>
-<h3 id=用户帐户user-account和服务帐户service-account>用户帐户（User Account）和服务帐户（Service Account）</h3>
-<p>用户帐户为人提供账户标识，而服务账户为计算机进程和K8s集群中运行的Pod提供账户标识。用户帐户和服务帐户的一个区别是作用范围；用户帐户对应的是人的身份，人的身份与服务的namespace无关，所以用户账户是跨namespace的；而服务帐户对应的是一个运行中程序的身份，与特定namespace是相关的。</p>
-<h3 id=名字空间namespace>名字空间（Namespace）</h3>
-<p>名字空间为K8s集群提供虚拟的隔离作用，K8s集群初始有两个名字空间，分别是默认名字空间default和系统名字空间kube-system，除此以外，管理员可以创建新的名字空间满足需要。</p>
-<h3 id=rbac访问授权>RBAC访问授权</h3>
-<p>K8s在1.3版本中发布了alpha版的基于角色的访问控制（Role-based Access Control，RBAC）的授权模式。相对于基于属性的访问控制（Attribute-based Access Control，ABAC），RBAC主要是引入了角色（Role）和角色绑定（RoleBinding）的抽象概念。在ABAC中，K8s集群中的访问策略只能跟用户直接关联；而在RBAC中，访问策略可以跟某个角色关联，具体的用户在跟一个或多个角色相关联。显然，RBAC像其他新功能一样，每次引入新功能，都会引入新的API对象，从而引入新的概念抽象，而这一新的概念抽象一定会使集群服务管理和使用更容易扩展和重用。</p>
-<h2 id=总结>总结</h2>
-<p>从K8s的系统架构、技术概念和设计理念，我们可以看到K8s系统最核心的两个设计理念：一个是容错性，一个是易扩展性。容错性实际是保证K8s系统稳定性和安全性的基础，易扩展性是保证K8s对变更友好，可以快速迭代增加新功能的基础。</p>
-<h2 id=参考>参考</h2>
-<p><a href=https://kubernetes.feisky.xyz/concepts/concepts#he-xin-ji-shu-gai-nian-he-api-dui-xiang>https://kubernetes.feisky.xyz/concepts/concepts#he-xin-ji-shu-gai-nian-he-api-dui-xiang</a><br>
-<a href=https://github.com/rootsongjc/kubernetes-handbook/blob/master/cloud-native/quick-start.md>https://github.com/rootsongjc/kubernetes-handbook/blob/master/cloud-native/quick-start.md</a></p>
+<h2 id=介绍kind>介绍kind</h2>
+<p><a href=https://github.com/kubernetes-sigs/kind/>Kind</a>是一个使用 Docker容器“节点”运行本地 Kubernetes 集群的工具。它主要用于测试 Kubernetes 本身，但也可用于本地开发或CI。<br>
+顾名思义，就是将 Kubernetes 所需要的所有组件，全部部署在一个 Docker 容器中，可以很方便的搭建 Kubernetes 集群。</p>
+<p>和<code>minikube</code>的区别，看看这里-><a href=https://brennerm.github.io/posts/minikube-vs-kind-vs-k3s.html>Minikube vs. kind vs. k3s - What should I use?</a></p>
+<h3 id=原理>原理</h3>
+<p>Kind 使用一个 container 来模拟一个 node，在 container 里面跑了 <code>systemd</code> ，并用 <code>systemd</code> 托管了 <code>kubelet</code> 以及 <code>containerd</code>，然后容器内部的 <code>kubelet</code> 把其他 <code>Kubernetes</code> 组件，比如 <code>kube-apiserver</code>，<code>etcd</code>，<code>cni</code> 等组件跑起来。<br>
+可以通过配置文件的方式，来通过创建多个 <code>container</code> 的方式，来模拟创建多个 Node，并以这些 Node 来构建一个多节点的 Kubernetes 集群。</p>
+<p>Kind 内部使用了 <code>kubeadm</code> 这个工具来做集群的部署，包括 <code>ha master</code> 的高可用集群，也是借助 <code>kubeadm</code> 提供的aplha特性提供的。同时，在 <code>ha master</code> 下，额外部署了一个 <code>nginx</code> 用来提供负载均衡 <code>vip</code>。</p>
+<h3 id=安装>安装</h3>
+<h4 id=依赖组件>依赖组件</h4>
+<p><strong>docker</strong><br>
+kind运行基石，必装√<br>
+安装参见：<a href=https://yeasy.gitbook.io/docker_practice/install>docker&ndash;从入门到实践</a></p>
+<p><strong>kubectl</strong><br>
+用于命令行交互集群，选装<br>
+安装参见：<a href=https://kubernetes.io/docs/tasks/tools/#install-kubectl>https://kubernetes.io/docs/tasks/tools/#install-kubectl</a></p>
+<h4 id=安装kind>安装kind</h4>
+<p>安装方式有两种：</p>
+<ul>
+<li>通过二进制文件编译安装<br>
+稳定的二进制文件在<a href=https://github.com/kubernetes-sigs/kind/releases>发布页面</a>上找到。<br>
+<strong>linux</strong></li>
+</ul>
+<blockquote>
+<p>curl -Lo ./kind <a href=https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64>https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64</a><br>
+chmod +x ./kind<br>
+mv ./kind /some-dir-in-your-PATH/kind</p>
+</blockquote>
+<ul>
+<li>通过Golang（1.14+）安装</li>
+</ul>
+<blockquote>
+<p>cd ~<br>
+go get <a href=mailto:sigs.k8s.io/kind@v0.11.1>sigs.k8s.io/kind@v0.11.1</a></p>
+</blockquote>
+<p>安装后的可执行文件在$GOPATH/bin目录下，注意加入环境变量使其可运用</p>
+<p>更多参考-><a href=https://kind.sigs.k8s.io/docs/user/quick-start/#installation>https://kind.sigs.k8s.io/docs/user/quick-start/#installation</a></p>
+<h4 id=查看可用命令>查看可用命令</h4>
+<p><strong>tips</strong>:以下bash脚本演示中 <strong>></strong> 表终端前面标识符，在你机器上可能和我的不一样</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>
+❯ kind --help
+kind creates and manages <span class=nb>local</span> Kubernetes clusters using Docker container <span class=s1>&#39;nodes&#39;</span>
+
+Usage:
+  kind <span class=o>[</span>command<span class=o>]</span>
+
+Available Commands:
+  build       Build one of <span class=o>[</span>node-image<span class=o>]</span>
+  completion  Output shell completion code <span class=k>for</span> the specified shell <span class=o>(</span>bash, zsh or fish<span class=o>)</span>
+  create      Creates one of <span class=o>[</span>cluster<span class=o>]</span>
+  delete      Deletes one of <span class=o>[</span>cluster<span class=o>]</span>
+  <span class=nb>export</span>      Exports one of <span class=o>[</span>kubeconfig, logs<span class=o>]</span>
+  get         Gets one of <span class=o>[</span>clusters, nodes, kubeconfig<span class=o>]</span>
+  <span class=nb>help</span>        Help about any <span class=nb>command</span>
+  load        Loads images into nodes
+  version     Prints the kind CLI version
+
+Flags:
+  -h, --help              <span class=nb>help</span> <span class=k>for</span> kind
+      --loglevel string   DEPRECATED: see -v instead
+  -q, --quiet             silence all stderr output
+  -v, --verbosity int32   info log verbosity
+      --version           version <span class=k>for</span> kind
+
+Use <span class=s2>&#34;kind [command] --help&#34;</span> <span class=k>for</span> more information about a command.
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=安装单节点集群>安装单节点集群</h2>
+<blockquote>
+<p>kind create cluster &ndash;name=clustername</p>
+</blockquote>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kind create cluster --name<span class=o>=</span>one
+Creating cluster <span class=s2>&#34;one&#34;</span> ...
+ ✓ Ensuring node image <span class=o>(</span>kindest/node:v1.21.1<span class=o>)</span> 🖼
+ ✓ Preparing nodes 📦  
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+Set kubectl context to <span class=s2>&#34;kind-one&#34;</span>
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-one
+
+Thanks <span class=k>for</span> using kind! 😊
+
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>tips</strong>：想知命令详情，善用<code>--help</code>，如<code>kind create cluster --help</code></p>
+</blockquote>
+<h3 id=解析安装过程>解析安装过程</h3>
+<ul>
+<li>检查本地环境是否存在一个基础的安装镜像，默认是 kindest/node:v1.21.1，该镜像里面包含了所有需要安装的东西，包括：kubectl、kubeadm、kubelet 的二进制文件，以及安装对应版本 Kubernetes 所需要的镜像。</li>
+<li>准备 Kubernetes 节点，主要就是启动容器、解压镜像这类的操作。</li>
+<li>建立对应的 kubeadm 的配置，完成之后就通过 kubeadm 进行安装。安装完成后还会做一些清理操作，比如：删掉主节点上的污点，否则对于没有容忍的 Pod 无法完成部署。</li>
+<li>上面所有操作都完成后，就成功启动了一个 Kubernetes 集群并输出一些操作集群的提示信息。</li>
+</ul>
+<blockquote>
+<p>1.默认情况下，Kind 会先下载 kindest/node:v1.21.1 镜像。如果你想指定不同版本，可以使用 &ndash;image 参数，类似这样：kind create cluster &ndash;image kindest/node:v1.20.1<br>
+2.kindest/node 这个镜像目前托管于 Docker Hub 上，下载时可能会较慢。同样的问题 Kind 进行集群的创建也是存在的，Kind 实际使用 Kubeadm 进行集群的创建。对 Kubeadm 有所了解的同学都知道它默认使用的镜像在国内是不能访问的，所以一样需要自行解决网络问题。<br>
+3.如果你存在上面说的网络问题，最好配置一个国内的加速器或者镜像源。如果你还不知道如何配置加速器和镜像源可以参考：<a href="https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&mid=2247488553&idx=1&sn=14cbe47bc50df50f536345efb4d10b5e&chksm=eac53500ddb2bc16be6bbfe69917895d0feed7c4e85d40450a5adb931ff01257d9f546c58538&token=687022088&lang=zh_CN#rd">「Docker / Kubernetes 镜像源不可用，教你几招搞定它！」</a>和 <a href="https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&mid=2247483698&idx=1&sn=dfb6edca74539a9a4d8228495d1c17a0&chksm=eac5201bddb2a90d5f8e6d4733ed2d0ff9466474471933e4ea5d5fc1ef6be15b86470f50eccb&token=21948731&lang=zh_CN#rd">「 Docker 下使用 DaoCloud / 阿里云镜像加速」</a>两篇文章。</p>
+</blockquote>
+<h3 id=查看集群信息>查看集群信息</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kubectl cluster-info
+Kubernetes control plane is running at https://127.0.0.1:44899
+CoreDNS is running at https://127.0.0.1:44899/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use <span class=s1>&#39;kubectl cluster-info dump&#39;</span>.
+❯ kubectl get nodes
+NAME                STATUS   ROLES                  AGE   VERSION
+one-control-plane   Ready    control-plane,master   44m   v1.21.1
+❯ kubectl get po -n kube-system
+NAME                                        READY   STATUS    RESTARTS   AGE
+coredns-558bd4d5db-df46d                    1/1     Running   <span class=m>0</span>          62m
+coredns-558bd4d5db-xnlpg                    1/1     Running   <span class=m>0</span>          62m
+etcd-one-control-plane                      1/1     Running   <span class=m>0</span>          62m
+kindnet-msfm7                               1/1     Running   <span class=m>0</span>          62m
+kube-apiserver-one-control-plane            1/1     Running   <span class=m>0</span>          62m
+kube-controller-manager-one-control-plane   1/1     Running   <span class=m>0</span>          62m
+kube-proxy-zwfjc                            1/1     Running   <span class=m>0</span>          62m
+kube-scheduler-one-control-plane            1/1     Running   <span class=m>0</span>          62m
+</code></pre></td></tr></table>
+</div>
+</div><p>若访问集群api报类似"anonymous cannot get path"，参考->https://blog.csdn.net/baidu_38432732/article/details/106469037。</p>
+<p>从上面的输出结果，可以看到单节点的 Kubernetes 已经搭建成功。单节点集群默认方式启动的节点类型是 control-plane，该节点包含了所有的组件。<br>
+这些组件分别是：2*Coredns、Etcd、Api-Server、Controller-Manager、Kube-Proxy、Sheduler 和网络插件 kindnet</p>
+<h2 id=安装多节点集群>安装多节点集群</h2>
+<p>默认安装的集群只部署了一个控制节点，如果需要部署多节点集群，我们可以通过配置文件的方式来创建多个容器。这样就可以达到模拟多个节点目的，并以这些节点来构建一个多节点的 Kubernetes 集群。</p>
+<p>0.创建多节点 Kubernetes 集群配置文件<br>
+Kind 在创建集群的时候，支持通过 &ndash;config 参数传递配置文件给 Kind，配置文件可修改的内容主要有 role 和 节点使用的镜像。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>&gt; vim my-cluster-multi-node.yaml
+<span class=c1># 一共两个节点，一个主节点，一个从节点。</span>
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+</code></pre></td></tr></table>
+</div>
+</div><p>1.创建多节点 Kubernetes 集群<br>
+配置文件创建完成后，就可以使用下面的命令来完成多节点 Kubernetes 集群搭建。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kind create cluster --config my-cluster-multi-node.yaml --name my-cluster-multi-node
+Creating cluster <span class=s2>&#34;my-cluster-multi-node&#34;</span> ...
+ ✓ Ensuring node image <span class=o>(</span>kindest/node:v1.21.1<span class=o>)</span> 🖼
+ ✓ Preparing nodes 📦 📦  
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+ ✓ Joining worker nodes 🚜 
+Set kubectl context to <span class=s2>&#34;kind-my-cluster-multi-node&#34;</span>
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-my-cluster-multi-node
+
+Not sure what to <span class=k>do</span> next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=查看集群信息-1>查看集群信息</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kubectl get nodes
+NAME                                  STATUS   ROLES                  AGE     VERSION
+my-cluster-multi-node-control-plane   Ready    control-plane,master   7m18s   v1.21.1
+my-cluster-multi-node-worker          Ready    &lt;none&gt;                 6m43s   v1.21.1
+❯ kubectl get po -n kube-system
+NAME                                                          READY   STATUS    RESTARTS   AGE
+coredns-558bd4d5db-phwsn                                      1/1     Running   <span class=m>0</span>          7m10s
+coredns-558bd4d5db-wzhqc                                      1/1     Running   <span class=m>0</span>          7m10s
+etcd-my-cluster-multi-node-control-plane                      1/1     Running   <span class=m>0</span>          7m13s
+kindnet-ssx8t                                                 1/1     Running   <span class=m>0</span>          7m10s
+kindnet-xmjfh                                                 1/1     Running   <span class=m>0</span>          6m53s
+kube-apiserver-my-cluster-multi-node-control-plane            1/1     Running   <span class=m>0</span>          7m13s
+kube-controller-manager-my-cluster-multi-node-control-plane   1/1     Running   <span class=m>0</span>          7m13s
+kube-proxy-gl2gj                                              1/1     Running   <span class=m>0</span>          7m10s
+kube-proxy-vv7vf                                              1/1     Running   <span class=m>0</span>          6m53s
+kube-scheduler-my-cluster-multi-node-control-plane            1/1     Running   <span class=m>0</span>          7m13s
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=创建高可用-kubernetes-集群>创建高可用 Kubernetes 集群</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>&gt; vim vim my-cluster-ha.yaml
+<span class=c1># 一共六个节点，三个 control-plane 节点，三个 workers 节点</span>
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+kubeadmConfigPatches:
+- <span class=p>|</span>
+  apiVersion: kubeadm.k8s.io/v1beta2
+  kind: ClusterConfiguration
+  metadata:
+    name: config
+  networking:
+    serviceSubnet: 10.0.0.0/16
+  imageRepository: registry.aliyuncs.com/google_containers
+  nodeRegistration:
+    kubeletExtraArgs:
+      pod-infra-container-image: registry.aliyuncs.com/google_containers/pause:3.1
+- <span class=p>|</span>
+  apiVersion: kubeadm.k8s.io/v1beta2
+  kind: InitConfiguration
+  metadata:
+    name: config
+  networking:
+    serviceSubnet: 10.0.0.0/16
+  imageRepository: registry.aliyuncs.com/google_containers
+nodes:
+- role: control-plane
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+
+
+❯ kind create cluster --name my-cluster-ha --config my-cluster-ha.yaml
+Creating cluster <span class=s2>&#34;my-cluster-ha&#34;</span> ...
+ ✓ Ensuring node image <span class=o>(</span>kindest/node:v1.21.1<span class=o>)</span> 🖼
+ ✓ Preparing nodes 📦 📦 📦 📦 📦 📦  
+ ✓ Configuring the external load balancer ⚖️ 
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+ ✓ Joining more control-plane nodes 🎮 
+ ✓ Joining worker nodes 🚜 
+Set kubectl context to <span class=s2>&#34;kind-my-cluster-ha&#34;</span>
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-my-cluster-ha
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=查看集群信息-2>查看集群信息</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kubectl get nodes
+NAME                           STATUS   ROLES                  AGE     VERSION
+my-cluster-ha-control-plane    Ready    control-plane,master   4m53s   v1.21.1
+my-cluster-ha-control-plane2   Ready    control-plane,master   4m20s   v1.21.1
+my-cluster-ha-control-plane3   Ready    control-plane,master   3m13s   v1.21.1
+my-cluster-ha-worker           Ready    &lt;none&gt;                 2m57s   v1.21.1
+my-cluster-ha-worker2          Ready    &lt;none&gt;                 2m57s   v1.21.1
+my-cluster-ha-worker3          Ready    &lt;none&gt;                 2m57s   v1.21.1
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=其它相关知识>其它相关知识</h2>
+<h3 id=kind-的镜像里的秘密>Kind 的镜像里的秘密</h3>
+<p>Kind 镜像一共分为两类，一类是 Base 镜像，另一类是 Node 镜像。</p>
+<p>0.Base 镜像<br>
+Base 镜像目前使用了 ubuntu:19.04 作为基础镜像，并做了下面的调整：</p>
+<ul>
+<li>安装 Systemd 相关的包，并调整一些配置以适应在容器内运行。</li>
+<li>安装 Kubernetes 运行时的依赖包，比如: Conntrack、Socat、CNI 等。</li>
+<li>安装容器运行环境，比如: Containerd、Crictl 等。</li>
+<li>配置自己的 ENTRYPOINT 脚本，以适应和调整容器内运行的问题。</li>
+</ul>
+<p>更多具体的构建逻辑可以参考：https://github.com/kubernetes-sigs/kind/blob/master/images/base/Dockerfile</p>
+<p>1.Node 镜像<br>
+Node 镜像的构建比较复杂，目前是通过运行 Base 镜像并在 Base 镜像内执行操作，再保存此容器内容为镜像的方式来构建的，包含的操作有：</p>
+<ul>
+<li>构建 Kubernetes 相关资源，比如：二进制文件和镜像。</li>
+<li>运行一个用于构建的容器</li>
+<li>把构建的 Kubernetes 相关资源复制到容器里</li>
+<li>调整部分组件配置参数，以支持在容器内运行</li>
+<li>预先拉去运行环境需要的镜像</li>
+<li>通过 docker commit 方式保存当前的构建容器为 Node 镜像</li>
+</ul>
+<h3 id=如何快速删除一个集群>如何快速删除一个集群</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>❯ kind get clusters
+my-cluster-ha
+my-cluster-multi-node
+one
+❯ kind delete cluster --name<span class=o>=</span>one
+Deleting cluster <span class=s2>&#34;one&#34;</span> ...
+❯ kind get clusters
+my-cluster-ha
+my-cluster-multi-node
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=参考>参考</h2>
+<ul>
+<li><a href=https://www.hi-linux.com/posts/42332.html>https://www.hi-linux.com/posts/42332.html</a></li>
+<li><a href=http://dockone.io/article/8974>http://dockone.io/article/8974</a></li>
+<li><a href=https://cloud-atlas.readthedocs.io/zh_CN/latest/docker/docker_in_docker/kind_multi_node.html>https://cloud-atlas.readthedocs.io/zh_CN/latest/docker/docker_in_docker/kind_multi_node.html</a></li>
+<li><a href=https://kind.sigs.k8s.io/>https://kind.sigs.k8s.io/</a></li>
+<li><a href=https://blog.csdn.net/baidu_38432732/article/details/106469037>https://blog.csdn.net/baidu_38432732/article/details/106469037</a></li>
+<li><a href=https://k8s.networkop.co.uk/cni/kindnet/>https://k8s.networkop.co.uk/cni/kindnet/</a></li>
+</ul>
 </article>
 <script defer src=/js/clipboard.min.1626706afc88d95ebe1173b553ec732c6dc82a576989315fdf5e7779af738a44.js></script>
 <script defer src=/js/helper/prev.min.js></script>
@@ -261,9 +701,9 @@ K8s中所有的配置都是通过API对象的spec去设置的，也就是用户�
 分享
 </div>
 <div class=donation__icons>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbetterme.xin%2fposts%2f2021-09%2fk8s04%2f" title=Facebook aria-label="Facebook Share Button" class=donation__item target=_blank rel=noreferrer data-type=share><svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191V.169c-.378-.052-1.678-.169-3.192-.169-3.159.0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z"/></svg>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbetterme.xin%2fposts%2f2021-09%2fkind%2f" title=Facebook aria-label="Facebook Share Button" class=donation__item target=_blank rel=noreferrer data-type=share><svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191V.169c-.378-.052-1.678-.169-3.192-.169-3.159.0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z"/></svg>
 </a>
-<a href="https://twitter.com/intent/tweet?text=K8s%e8%ae%be%e8%ae%a1%e7%90%86%e5%bf%b5&url=https%3a%2f%2fbetterme.xin%2fposts%2f2021-09%2fk8s04%2f&hashtags=k8s&via=" title=Twitter aria-label="Twitter Share Button" class=donation__item target=_blank rel=noreferrer data-type=share><svg data-name="twitter" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="m21.534 7.113C22.51 6.42 23.331 5.555 24 4.559v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724.0-4.917 2.211-4.917 4.921.0.39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487.0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315.0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403.0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683.0 14.342-7.244 13.986-14.637z"/></svg>
+<a href="https://twitter.com/intent/tweet?text=Kind%e5%88%9b%e5%bb%ba%e5%8d%95%e3%80%81%e5%a4%9a%e9%9b%86%e7%be%a4&url=https%3a%2f%2fbetterme.xin%2fposts%2f2021-09%2fkind%2f&hashtags=k8s%2ckind&via=" title=Twitter aria-label="Twitter Share Button" class=donation__item target=_blank rel=noreferrer data-type=share><svg data-name="twitter" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="m21.534 7.113C22.51 6.42 23.331 5.555 24 4.559v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724.0-4.917 2.211-4.917 4.921.0.39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487.0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315.0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403.0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683.0 14.342-7.244 13.986-14.637z"/></svg>
 </a>
 <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://service.weibo.com/share/share.php?url='+e(d.location.href)+'&title='+e(d.title),x=function(){if(!window.open(r,'weibo','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" class=donation__item target=_blank rel=noreferrer title=Weibo aria-label="Weibo Share Button" data-type=share><svg data-name="weibo" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="m23.977 8.171c.103 1.315-.123 2.891-1.006 2.969-1.442.127-.69-1.435-.671-2.375.053-2.725-2.312-4.618-4.629-4.618-.656.0-2.181.438-1.946-.924.106-.6.623-.592 1.14-.66 3.897-.51 6.838 2.125 7.112 5.608z"/><path d="m17.604 11.337c1.675.901 3.687 1.35 3.354 4.024-.614 4.929-11.054 8.24-17.575 4.618-1.788-.994-3.639-2.448-3.354-5.344.246-2.493 1.95-4.424 3.623-6.069 1.596-1.57 3.278-2.798 5.567-3.364 2.484-.614 3.218 1.422 2.549 3.43 1.439-.095 4.488-1.674 5.836-.132.594.68.367 1.897.0 2.837zm-1.811 6.333c.537-.598 1.076-1.51 1.073-2.572-.01-4.395-7.635-5.376-11.806-2.969-4.747 2.74-2.743 7.664 3.086 8.048 3.088.204 6.179-.868 7.647-2.507z"/><path d="m19.952 10.084c-.977.064-.612-.658-.671-1.517-.037-.529-.483-1.14-.872-1.32-.763-.352-1.945.256-1.945-.791.0-.778.686-.697 1.074-.726 3.555-.266 3.775 4.265 2.414 4.354z"/><path d="m12.842 14.768c1.429 4.248-6.017 6.223-7.379 2.573-.911-2.441 1.277-4.383 3.555-4.618 1.945-.201 3.395.775 3.824 2.045zm-3.422.726c.303.516 1 .145.939-.264-.073-.473-.945-.403-.939.264zm-1.207 2.243c1.252-.293 1.42-2.612-.47-2.177-1.587.364-1.28 2.586.47 2.177z"/></svg>
 </a>
@@ -331,6 +771,9 @@ Developer
 </h1>
 <ul class=related-ul>
 <li>
+<a href=/posts/2021-09/k8s04/ class=related__link>K8s设计理念</a>
+</li>
+<li>
 <a href=/posts/2021-09/k8s03/ class=related__link>扩展应用与滚动升级</a>
 </li>
 <li>
@@ -343,22 +786,17 @@ Developer
 </section>
 <div class=grow></div>
 <nav class=pagination-single>
-<a href=https://betterme.xin/posts/2021-09/gokeywords/ class=pagination-single__left>
+<a href=https://betterme.xin/posts/2021-09/k8s04/ class=pagination-single__left>
 <div class=pagination-single__icon><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentcolor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03.0-1.42s-1.02-.39-1.41.0l-6.59 6.59c-.39.39-.39 1.02.0 1.41l6.59 6.59c.39.39 1.02.39 1.41.0s.39-1.02.0-1.41L7.83 13H19c.55.0 1-.45 1-1s-.45-1-1-1z"/></svg>
 </div>
-<div class=pagination-single__left-title>巧记go关键词</div>
+<div class=pagination-single__left-title>K8s设计理念</div>
 </a>
 <div class=grow></div>
-<a href=https://betterme.xin/posts/2021-09/kind/ class=pagination-single__right>
-<div class=pagination-single__right-title>Kind创建单、多集群</div>
-<div class=pagination-single__icon><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentcolor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03.0 1.42.39.39 1.02.39 1.41.0l6.59-6.59c.39-.39.39-1.02.0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41.0s-.39 1.02.0 1.41L16.17 11H5c-.55.0-1 .45-1 1s.45 1 1 1z"/></svg>
-</div>
-</a>
 </nav>
 <div id=gitalk-container></div>
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css crossorigin=anonymous>
 <script src=https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js crossorigin=anonymous></script>
-<script>var gitalk=new Gitalk({id:'2021-09-28 14:18:51 \u002b0800 \u002b0800',title:'K8s设计理念',clientID:'4663d0721ccec0ae10c8',clientSecret:'6d6565011bc6f2a0b0c0b06e44d4c82b25b70fa5',repo:'blog',owner:'Jason-cqtan',admin:['Jason-cqtan'],body:decodeURI(location.href)});gitalk.render('gitalk-container')</script>
+<script>var gitalk=new Gitalk({id:'2021-09-29 14:21:35 \u002b0800 \u002b0800',title:'Kind创建单、多集群',clientID:'4663d0721ccec0ae10c8',clientSecret:'6d6565011bc6f2a0b0c0b06e44d4c82b25b70fa5',repo:'blog',owner:'Jason-cqtan',admin:['Jason-cqtan'],body:decodeURI(location.href)});gitalk.render('gitalk-container')</script>
 <noscript>Please enable JavaScript to view the <a href=https://github.com/gitalk/gitalk>comments powered by gitalk.</a></noscript>
 <div class="modal micromodal-slide" id=modal aria-hidden=true>
 <div class=modal__overlay tabindex=-1 data-micromodal-close>
@@ -419,32 +857,43 @@ Developer
 <span class="slider round"></span>
 </label>
 </div>
-<div class=toc data-dir=ltr data-folding=false data-ani=true>
+<div class=toc data-dir=ltr data-folding=true data-ani=true>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#设计理念与分布式系统>设计理念与分布式系统</a></li>
-<li><a href=#架构设计原则>架构设计原则</a></li>
-<li><a href=#核心技术概念和api对象>核心技术概念和API对象</a>
+<li><a href=#介绍kind>介绍kind</a>
 <ul>
-<li><a href=#节点node>节点（Node）</a></li>
-<li><a href=#pod>pod</a></li>
-<li><a href=#复制控制器replication-controllerrc>复制控制器（Replication Controller，RC）</a></li>
-<li><a href=#副本集replica-setrs>副本集（Replica Set，RS）</a></li>
-<li><a href=#部署deployment>部署(Deployment)</a></li>
-<li><a href=#服务service>服务（Service）</a></li>
-<li><a href=#任务job>任务（Job）</a></li>
-<li><a href=#后台支撑服务集daemonset>后台支撑服务集（DaemonSet）</a></li>
-<li><a href=#有状态服务集statefulset>有状态服务集（StatefulSet）</a></li>
-<li><a href=#集群联邦federation>集群联邦（Federation）</a></li>
-<li><a href=#存储卷volume>存储卷（Volume）</a></li>
-<li><a href=#持久存储卷persistent-volumepv和持久存储卷声明persistent-volume-claimpvc>持久存储卷（Persistent Volume，PV）和持久存储卷声明（Persistent Volume Claim，PVC）</a></li>
-<li><a href=#密钥对象secret>密钥对象（Secret）</a></li>
-<li><a href=#用户帐户user-account和服务帐户service-account>用户帐户（User Account）和服务帐户（Service Account）</a></li>
-<li><a href=#名字空间namespace>名字空间（Namespace）</a></li>
-<li><a href=#rbac访问授权>RBAC访问授权</a></li>
+<li><a href=#原理>原理</a></li>
+<li><a href=#安装>安装</a>
+<ul>
+<li><a href=#依赖组件>依赖组件</a></li>
+<li><a href=#安装kind>安装kind</a></li>
+<li><a href=#查看可用命令>查看可用命令</a></li>
 </ul>
 </li>
-<li><a href=#总结>总结</a></li>
+</ul>
+</li>
+<li><a href=#安装单节点集群>安装单节点集群</a>
+<ul>
+<li><a href=#解析安装过程>解析安装过程</a></li>
+<li><a href=#查看集群信息>查看集群信息</a></li>
+</ul>
+</li>
+<li><a href=#安装多节点集群>安装多节点集群</a>
+<ul>
+<li><a href=#查看集群信息-1>查看集群信息</a></li>
+</ul>
+</li>
+<li><a href=#创建高可用-kubernetes-集群>创建高可用 Kubernetes 集群</a>
+<ul>
+<li><a href=#查看集群信息-2>查看集群信息</a></li>
+</ul>
+</li>
+<li><a href=#其它相关知识>其它相关知识</a>
+<ul>
+<li><a href=#kind-的镜像里的秘密>Kind 的镜像里的秘密</a></li>
+<li><a href=#如何快速删除一个集群>如何快速删除一个集群</a></li>
+</ul>
+</li>
 <li><a href=#参考>参考</a></li>
 </ul>
 </nav>
@@ -458,7 +907,7 @@ Developer
 <script defer src=/js/helper/prop.min.js></script>
 <script defer src=/js/helper/fadeinout.min.js></script>
 <script defer src=/js/helper/throttle.min.js></script>
-<script>'use strict';window.onload=function(){var f=document.querySelector('.navbar'),D=document.querySelector('.single__contents'),E=JSON.parse("true"),J=JSON.parse("true"),s,H,F,L,k,j,A,g,u,x,d,e,l,i,I,C,K,v,N,y,r,z,b,w,t,M,h,c,G,a,m,n,o,p,B,q;E&&J&&(s=document.querySelector('#busuanzi_value_page_pv'),s.textContent=s.textContent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1,")),H=JSON.parse("true"),F=JSON.parse("null"),L=JSON.parse("false"),k=document.querySelector('.toc__flexbox'),j=document.querySelector('.toc__flexbox--outer'),A=JSON.parse("false"),(H||F)&&document.querySelector('.toc')&&(g=document.querySelector('.toc').querySelector('#TableOfContents'),g.onmouseenter=function(){f.classList.contains('scrolling')&&f.classList.remove('scrolling')},g.onmouseleave=function(){f.classList.contains('scrolling')||f.classList.add('scrolling')},!1===A||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),g&&(g.querySelectorAll('a').length>0?g.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){var c=a.getAttribute('id'),b;f.classList.contains('scrolling')||(f.classList.remove('navbar--show'),f.classList.remove('navbar--hide'),f.classList.add('navbar--hide')),document.querySelector('.toc').querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),a.classList.add('active'),b=g.querySelector('[href="#'+c+'"]'),b&&b.nextElementSibling&&(b.nextElementSibling.style.display='block'),b&&(getParents(b,'ul')?getParents(b,'ul').forEach(function(a){a.style.display='block'}):null)})}):(k&&(k.setAttribute('data-position',''),k.classList.contains('hide')||k.classList.add('hide')),j&&(j.setAttribute('data-position',''),j.classList.contains('hide')||j.classList.add('hide')))),u=document.getElementById("toggle-toc"),x=document.getElementById('visible-toc'),d=document.querySelector('.toc'),e=document.querySelector('main'),l=document.querySelector('side'),i=document.querySelector('.toc__flexbox'),u?u.addEventListener('change',function(a){a.target.checked?(d&&fadeIn(d,200),i&&i.setAttribute('data-position','fixed'),e&&(e.classList.remove('main-main'),e.classList.remove('main'),e.classList.add('main-main')),l&&l.classList.remove('main-side')):(d&&fadeOut(d,200),i&&i.setAttribute('data-position','absolute'),e&&(e.classList.remove('main-main'),e.classList.remove('main'),e.classList.add('main')),l&&l.classList.remove('main-side'))}):null,x?x.addEventListener('change',function(a){a.target.checked?d&&fadeIn(d,200):d&&fadeOut(d,200)}):null),I=120,C=70,K=function(){d&&(d.style.maxHeight=window.innerHeight-I-C+'px')},v=throttle(K,300),v(),window.addEventListener('resize',v),y=new ClipboardJS('.anchor'),r=D.querySelectorAll("h1, h2, h3, h4"),z=JSON.parse('"ltr"'),r?r.forEach(function(c){var d=parseInt(c.tagName.substr(1),10)*2,e=encodeURI(document.location.origin+document.location.pathname),f=e+"#"+c.getAttribute('id'),b=document.createElement('span'),a;b.classList.add('anchor'),b.classList.add('hide'),b.setAttribute('data-clipboard-text',decodeURI(f)),b.style.position='relative',a=document.createElement('span'),a.style.position='absolute',a.style.top='50%',a.style.left='0.75rem',a.style.transform='translateY(-50%)',a.innerHTML=`
+<script>'use strict';window.onload=function(){var f=document.querySelector('.navbar'),D=document.querySelector('.single__contents'),E=JSON.parse("true"),J=JSON.parse("true"),s,H,F,L,k,j,A,g,u,x,d,e,l,i,I,C,K,v,N,y,r,z,b,w,t,M,h,c,G,a,m,n,o,p,B,q;E&&J&&(s=document.querySelector('#busuanzi_value_page_pv'),s.textContent=s.textContent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1,")),H=JSON.parse("true"),F=JSON.parse("null"),L=JSON.parse("false"),k=document.querySelector('.toc__flexbox'),j=document.querySelector('.toc__flexbox--outer'),A=JSON.parse("true"),(H||F)&&document.querySelector('.toc')&&(g=document.querySelector('.toc').querySelector('#TableOfContents'),g.onmouseenter=function(){f.classList.contains('scrolling')&&f.classList.remove('scrolling')},g.onmouseleave=function(){f.classList.contains('scrolling')||f.classList.add('scrolling')},!1===A||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),g&&(g.querySelectorAll('a').length>0?g.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){var c=a.getAttribute('id'),b;f.classList.contains('scrolling')||(f.classList.remove('navbar--show'),f.classList.remove('navbar--hide'),f.classList.add('navbar--hide')),document.querySelector('.toc').querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),a.classList.add('active'),b=g.querySelector('[href="#'+c+'"]'),b&&b.nextElementSibling&&(b.nextElementSibling.style.display='block'),b&&(getParents(b,'ul')?getParents(b,'ul').forEach(function(a){a.style.display='block'}):null)})}):(k&&(k.setAttribute('data-position',''),k.classList.contains('hide')||k.classList.add('hide')),j&&(j.setAttribute('data-position',''),j.classList.contains('hide')||j.classList.add('hide')))),u=document.getElementById("toggle-toc"),x=document.getElementById('visible-toc'),d=document.querySelector('.toc'),e=document.querySelector('main'),l=document.querySelector('side'),i=document.querySelector('.toc__flexbox'),u?u.addEventListener('change',function(a){a.target.checked?(d&&fadeIn(d,200),i&&i.setAttribute('data-position','fixed'),e&&(e.classList.remove('main-main'),e.classList.remove('main'),e.classList.add('main-main')),l&&l.classList.remove('main-side')):(d&&fadeOut(d,200),i&&i.setAttribute('data-position','absolute'),e&&(e.classList.remove('main-main'),e.classList.remove('main'),e.classList.add('main')),l&&l.classList.remove('main-side'))}):null,x?x.addEventListener('change',function(a){a.target.checked?d&&fadeIn(d,200):d&&fadeOut(d,200)}):null),I=120,C=70,K=function(){d&&(d.style.maxHeight=window.innerHeight-I-C+'px')},v=throttle(K,300),v(),window.addEventListener('resize',v),y=new ClipboardJS('.anchor'),r=D.querySelectorAll("h1, h2, h3, h4"),z=JSON.parse('"ltr"'),r?r.forEach(function(c){var d=parseInt(c.tagName.substr(1),10)*2,e=encodeURI(document.location.origin+document.location.pathname),f=e+"#"+c.getAttribute('id'),b=document.createElement('span'),a;b.classList.add('anchor'),b.classList.add('hide'),b.setAttribute('data-clipboard-text',decodeURI(f)),b.style.position='relative',a=document.createElement('span'),a.style.position='absolute',a.style.top='50%',a.style.left='0.75rem',a.style.transform='translateY(-50%)',a.innerHTML=`
 <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${32-d}px" height="${32-d}px"><path d="M 5.5625 0 C 4.136719 0 2.707031 0.542969 1.625 1.625 C -0.539063 3.789063 -0.539063 7.335938 1.625 9.5 L 5.28125 13.15625 C 5.667969 13.554688 6.304688 13.558594 6.703125 13.171875 C 7.101563 12.785156 7.105469 12.148438 6.71875 11.75 L 3.03125 8.0625 C 1.632813 6.664063 1.632813 4.429688 3.03125 3.03125 C 4.429688 1.632813 6.664063 1.632813 8.0625 3.03125 L 12.96875 7.9375 C 14.367188 9.335938 14.367188 11.570313 12.96875 12.96875 C 12.804688 13.132813 12.621094 13.25 12.4375 13.375 C 11.980469 13.6875 11.859375 14.308594 12.171875 14.765625 C 12.484375 15.222656 13.105469 15.34375 13.5625 15.03125 C 13.847656 14.835938 14.125 14.625 14.375 14.375 C 16.539063 12.210938 16.539063 8.664063 14.375 6.5 L 9.5 1.625 C 8.417969 0.542969 6.988281 0 5.5625 0 Z M 10.78125 8.875 C 10.738281 8.882813 10.695313 8.894531 10.65625 8.90625 C 10.507813 8.9375 10.371094 9 10.25 9.09375 C 10.039063 9.253906 9.820313 9.429688 9.625 9.625 C 7.460938 11.789063 7.460938 15.335938 9.625 17.5 L 14.5 22.375 C 16.664063 24.539063 20.210938 24.539063 22.375 22.375 C 24.539063 20.210938 24.539063 16.664063 22.375 14.5 L 18.71875 10.875 C 18.476563 10.578125 18.089844 10.441406 17.714844 10.527344 C 17.34375 10.613281 17.050781 10.90625 16.964844 11.277344 C 16.878906 11.652344 17.015625 12.039063 17.3125 12.28125 L 20.96875 15.9375 C 22.367188 17.335938 22.367188 19.570313 20.96875 20.96875 C 19.570313 22.367188 17.335938 22.367188 15.9375 20.96875 L 11.03125 16.0625 C 9.632813 14.664063 9.632813 12.429688 11.03125 11.03125 C 11.152344 10.90625 11.300781 10.820313 11.4375 10.71875 C 11.839844 10.472656 12.015625 9.976563 11.855469 9.53125 C 11.699219 9.085938 11.25 8.8125 10.78125 8.875 Z"/></svg>`,z==="rtl"?a.style.left='-2rem':a.style.right='-2rem',b.append(a),c.append(b),c.addEventListener('mouseenter',function(){this.querySelector('.anchor').classList.remove('hide')}),c.addEventListener('mouseleave',function(){this.querySelector('.anchor').classList.add('hide')})}):null,document.querySelectorAll('.anchor').forEach(function(a){a.addEventListener('mouseleave',function(){a.setAttribute('aria-label',null),a.classList.remove('tooltipped'),a.classList.remove('tooltipped-s'),a.classList.remove('tooltipped-w')})}),y.on('success',function(a){a.clearSelection(),a.trigger.setAttribute('aria-label','Link copied to clipboard!'),a.trigger.classList.add('tooltipped'),a.trigger.classList.add('tooltipped-s')}),b=JSON.parse("null"),b&&b.includes('mermaid')&&(w=localStorage.getItem('theme')||JSON.parse('"light"'),w==="dark"||w==="hacker"?mermaid.initialize({theme:'dark'}):mermaid.initialize({theme:'default'}),t=[],[].push.apply(t,document.getElementsByClassName('language-mermaid')),t.forEach(function(b){var a=b.parentNode,c;a!==document.body&&(a.parentNode.insertBefore(b,a),a.parentNode.removeChild(a)),c=document.createElement('div'),c.classList.add('mermaid'),c.style.padding='34px 4px 6px',c.innerHTML=b.innerHTML,b.replaceWith(c)})),b&&b.includes('katex')&&(M=document.getElementsByClassName('math'),h={delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}]},renderMathInElement(document.querySelector('.single__contents'),h)),b&&b.includes('flowchartjs')&&(h=JSON.parse('{"arrow-end":"block","element-color":"black","fill":"white","flowstate":{"approved":{"fill":"#58C4A3","font-size":12,"no-text":"n/a","yes-text":"APPROVED"},"current":{"fill":"yellow","font-color":"red","font-weight":"bold"},"future":{"fill":"#FFFF99"},"invalid":{"fill":"#444444"},"past":{"fill":"#CCCCCC","font-size":12},"rejected":{"fill":"#C45879","font-size":12,"no-text":"REJECTED","yes-text":"n/a"},"request":{"fill":"blue"}},"font-color":"black","font-size":14,"line-color":"black","line-length":50,"line-width":3,"no-text":"no","scale":1,"symbols":{"end":{"class":"end-element"},"start":{"element-color":"green","fill":"yellow","font-color":"red"}},"text-margin":10,"x":0,"y":0,"yes-text":"yes"}'),c=null,G="language-flowchart",a=0,Array.prototype.forEach.call(document.querySelectorAll("[class^="+G+"]"),function(b){var d,e;b.style.display='none',b.parentNode.style.backgroundColor="transparent",c=b.innerText,d=document.createElement('div'),d.id='flowchart'+a,b.parentNode.insertBefore(d,b),e=flowchart.parse(c),e.drawSVG("flowchart"+a,h),a+=1})),document.querySelectorAll("mjx-container").forEach(function(a){a.parentElement.classList+='has-jax'}),b&&b.includes('msc')&&(h=JSON.parse('{"theme":"hand"}'),c=null,a=0,m="language-msc",Array.prototype.forEach.call(document.querySelectorAll("[class^="+m+"]"),function(b){var d,e;b.style.display='none',b.parentNode.style.backgroundColor="transparent",c=b.innerText,d=document.createElement('div'),d.id='msc'+a,b.parentNode.insertBefore(d,b),e=Diagram.parse(c),e.drawSVG("msc"+a,h),a+=1})),b&&b.includes('chart')&&(n="#666",o="#ddd",p=2,Chart.defaults.global.elements.rectangle.borderWidth=p,Chart.defaults.global.elements.rectangle.borderColor=n,Chart.defaults.global.elements.rectangle.backgroundColor=o,Chart.defaults.global.elements.line.borderWidth=p,Chart.defaults.global.elements.line.borderColor=n,Chart.defaults.global.elements.line.backgroundColor=o,Chart.defaults.global.elements.point.borderWidth=p,Chart.defaults.global.elements.point.borderColor=n,Chart.defaults.global.elements.point.backgroundColor=o,m="language-chart",a=0,c=null,Array.prototype.forEach.call(document.querySelectorAll("[class^="+m+"]"),function(b){var d,e,f,g;b.style.display='none',b.parentNode.style.backgroundColor="transparent",c=b.innerText,d=document.createElement('canvas'),e=null,d.height=200,d.style.height=200,d.id='myChart'+a,e=JSON.parse(c),b.parentNode.insertBefore(d,b),f=document.getElementById('myChart'+a).getContext('2d'),g=new Chart(f,e),a+=1})),b&&b.includes('wavedrom')&&(B="language-wave",a=0,c=null,Array.prototype.forEach.call(document.querySelectorAll("[class^="+B+"]"),function(b){var d,e;b.style.display='none',b.parentNode.style.backgroundColor="transparent",c=b.innerText,d=document.createElement('div'),e=null,d.id='WaveDrom_Display_'+a,e=JSON.parse(c),b.parentNode.insertBefore(d,b),WaveDrom.RenderWaveForm(a,e,"WaveDrom_Display_"),a+=1})),b&&b.includes('viz')&&(q="language-viz-",Array.prototype.forEach.call(document.querySelectorAll("[class^="+q+"]"),function(a){var b,c;a.style.display='none',a.parentNode.style.backgroundColor="transparent",a.getAttribute("class").split(" ").forEach(function(a){a.startsWith(q)&&(b=a.substr(q.length))}),c=new Viz,c.renderSVGElement(a.innerText,{engine:b}).then(function(b){b.style.width="100%",a.parentNode.insertBefore(b,a)})}))}</script>
 <footer class=footer>
 <div class=footer__social>
